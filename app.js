@@ -32,8 +32,8 @@ async function findUID() {
         const response = await fetch(`https://api.zetsu.xyz/api/findid?url=${encodeURIComponent(url)}`);
         const data = await response.json();
         
-        if (data.uid) {
-            document.getElementById('uidResult').textContent = `UID: ${data.uid}`;
+        if (data.result) {
+            document.getElementById('uidResult').textContent = `UID: ${data.result}`;
             document.getElementById('resultBox').style.display = 'block';
         } else {
             alert('UID not found');
