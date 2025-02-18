@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(45deg, #4267B2, #898F9C);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: clamp(1.5rem, 5vw, 3rem);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 95%;
+    max-width: 600px;
+    margin: 20px auto;
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    to { transform: translateY(0); opacity: 1; }
+}
+
+h1 {
+    color: #4267B2;
+    text-align: center;
+    margin-bottom: clamp(20px, 3vw, 30px);
+    font-size: clamp(1.8em, 5vw, 2.5em);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+input {
+    width: 100%;
+    padding: clamp(12px, 2vw, 15px);
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: clamp(14px, 2.5vw, 16px);
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #4267B2;
+    outline: none;
+    transform: scale(1.02);
+}
+
+button {
+    padding: clamp(12px, 2vw, 15px) clamp(20px, 4vw, 30px);
+    background: #4267B2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: clamp(14px, 2.5vw, 16px);
+}
+
+button:hover {
+    background: #365899;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+button:active { transform: scale(0.95); }
+
+.result-box {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.copy-btn {
+    background: #28a745;
+    padding: 8px 15px;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.powered-by {
+    position: absolute;
+    bottom: clamp(10px, 3vh, 20px);
+    color: white;
+    font-size: clamp(12px, 2vw, 14px);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.music-note {
+    position: fixed;
+    top: clamp(10px, 3vh, 20px);
+    right: clamp(10px, 3vw, 20px);
+    color: white;
+    font-size: clamp(20px, 4vw, 24px);
+    animation: float 3s infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@media (min-width: 768px) {
+    .input-group { flex-direction: row; }
+    input { flex: 1 1 70%; }
+    button { flex: 1 1 30%; }
+}
+
+@media (max-width: 480px) {
+    body { padding: 10px; }
+    .container { padding: 1.5rem; }
+}
+
+@media (orientation: landscape) and (max-width: 800px) {
+    .container { margin-top: 10px; }
+    h1 { font-size: 1.5em; }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Facebook UID Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="music-note">🎵</div>
+    <div class="container">
+        <h1>Facebook UID Finder</h1>
+        <div class="input-group">
+            <input type="text" id="fbUrl" placeholder="Enter Facebook Profile URL">
+            <button onclick="findUID()">Find UID</button>
+        </div>
+        <div class="result-box" id="resultBox">
+            <div class="result-content">
+                <span id="uidResult"></span>
+                <button class="copy-btn" onclick="copyUID()">Copy</button>
+            </div>
+        </div>
+    </div>
+    <div class="powered-by">Powered by JackLxProCoder</div>
+
+    <audio id="bgMusic" autoplay></audio>
+    
+    <script src="app.js"></script>
+</body>
+</html>
