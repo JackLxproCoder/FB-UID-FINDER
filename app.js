@@ -33,7 +33,7 @@ async function findUID() {
         const data = await response.json();
         
         if (data.result) {
-            document.getElementById('uidResult').textContent = `UID: ${data.UID}`;
+            document.getElementById('UID').textContent = `UID: ${data.UID}`;
             document.getElementById('resultBox').style.display = 'block';
         } else {
             alert('UID not found');
@@ -45,7 +45,7 @@ async function findUID() {
 }
 
 function copyUID() {
-    const uid = document.getElementById('uidResult').textContent.replace('UID: ', '');
+    const uid = document.getElementById('UID').textContent.replace('UID: ', '');
     navigator.clipboard.writeText(uid);
     alert('UID copied to clipboard!');
 }
