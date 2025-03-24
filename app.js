@@ -29,11 +29,11 @@ async function findUID() {
     if (!url) return alert('Please enter a Facebook URL');
     
     try {
-        const response = await fetch(`https://api.zetsu.xyz/api/findid?url=${encodeURIComponent(url)}`);
+        const response = await fetch(`https://kaiz-apis.gleeze.com/api/fbuid?url=${encodeURIComponent(url)}`);
         const data = await response.json();
         
         if (data.result) {
-            document.getElementById('uidResult').textContent = `UID: ${data.result}`;
+            document.getElementById('uidResult').textContent = `UID: ${data.UID}`;
             document.getElementById('resultBox').style.display = 'block';
         } else {
             alert('UID not found');
